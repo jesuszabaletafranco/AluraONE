@@ -8,42 +8,32 @@
         <link rel="stylesheet" href="style.css">
 		<script>
 			var texto = "";			
-			var encriptado = 0;
-			
-			function encriptar(){
-				if(encriptado == 0){
-					var texto2 = "";
-					texto = document.querySelector('#texto').value;
-					//alert("Encriptar :" + texto);			
-					for(var i = 0; i < texto.length; i++){
-						if(texto.charAt(i) == "e") texto2 += "enter";
-						else if(texto.charAt(i) == "i") texto2 +=  "imes";
-						else if(texto.charAt(i) == "a") texto2 +=  "ai";
-						else if(texto.charAt(i) == "o") texto2 +=  "ober";
-						else if(texto.charAt(i) == "u") texto2 +=  "ufat";
-						else texto2 += texto.charAt(i);
-						//alert('Encriptar : ' + texto.charAt(i));
-					}
-					encriptado = 1;
-					document.querySelector('#texto').value = texto2;
-				}else {
-					alert('Texto encriptado');
+						
+			function encriptar(){				
+				var texto2 = "";
+				texto = document.querySelector('#texto').value;
+				//alert("Encriptar :" + texto);			
+				for(var i = 0; i < texto.length; i++){
+					if(texto.charAt(i) == "e") texto2 += "enter";
+					else if(texto.charAt(i) == "i") texto2 +=  "imes";
+					else if(texto.charAt(i) == "a") texto2 +=  "ai";
+					else if(texto.charAt(i) == "o") texto2 +=  "ober";
+					else if(texto.charAt(i) == "u") texto2 +=  "ufat";
+					else texto2 += texto.charAt(i);
+					//alert('Encriptar : ' + texto.charAt(i));
 				}
+				document.querySelector('#texto').value = texto2;
 			}
-			function desencriptar(){
-				if(encriptado == 0){
-					var texto2 = "";
-					texto = document.querySelector('#texto').value;				
+			function desencriptar(){				
+				texto = document.querySelector('#texto').value;				
+				for(var i = 0; i < texto.length; i++){
 					texto = texto.replace("enter", "e");
 					texto = texto.replace("imes", "i");
 					texto = texto.replace("ai", "a");
 					texto = texto.replace("ober", "o");
 					texto = texto.replace("ufat", "u");
-					document.querySelector('#texto').value = texto;
-					encriptado = 0;
-				}else {
-					alert('Texto no encriptado');
 				}
+				document.querySelector('#texto').value = texto;
 			}
 		
 		</script>
